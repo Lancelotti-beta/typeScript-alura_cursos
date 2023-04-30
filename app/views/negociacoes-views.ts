@@ -35,9 +35,9 @@ export class NegociacoesView {
 				return `
                 	    	<tr>
                     		    <td>${
-					data.getUTCDate() + "/ " +
-					(data.getUTCMonth() + 1) + "/ " +
-					data.getUTCFullYear()
+					new Intl
+					    .DateTimeFormat()
+					    .format(data)
 				    }</td>
                     		    <td>${quantidade}</td>
                     		    <td>${valor}</td>

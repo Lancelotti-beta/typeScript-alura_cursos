@@ -13,8 +13,7 @@ export class NegociacoesView {
 			</tr>	    
 		    </thead>
 		    <tbody>
-			${this.negociacaoAdicionada(negociacao)}			        
-		    </tbody>
+			${this.negociacaoAdicionada(negociacao)}			       	    </tbody>
 		</table>
 		`;
     }
@@ -27,9 +26,9 @@ export class NegociacoesView {
             .map(({ data, quantidade, valor }) => {
             return `
                 	    	<tr>
-                    		    <td>${data.getUTCDate() + "/ " +
-                (data.getUTCMonth() + 1) + "/ " +
-                data.getUTCFullYear()}</td>
+                    		    <td>${new Intl
+                .DateTimeFormat()
+                .format(data)}</td>
                     		    <td>${quantidade}</td>
                     		    <td>${valor}</td>
                 	    	</tr>
