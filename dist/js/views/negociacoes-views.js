@@ -1,7 +1,5 @@
-export class NegociacoesView {
-    constructor(seletor) {
-        this.elemento = document.querySelector(seletor);
-    }
+import { View } from "./view.js";
+export class NegociacoesView extends View {
     template(negociacao) {
         return `
 		<table class="table table-houver table-bordered">
@@ -16,9 +14,6 @@ export class NegociacoesView {
 			${this.negociacaoAdicionada(negociacao)}			       	    </tbody>
 		</table>
 		`;
-    }
-    update(negociacoes) {
-        this.elemento.innerHTML = this.template(negociacoes);
     }
     negociacaoAdicionada(negociacoes) {
         return negociacoes
