@@ -5,7 +5,4 @@ export class View {
     update(parametro) {
         this.elemento.innerHTML = this.template(parametro);
     }
-    template(parametro) {
-        throw new Error('Ops! A classe filha precisa implementar o método');
-    }
 }
