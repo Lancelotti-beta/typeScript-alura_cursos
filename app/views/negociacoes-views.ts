@@ -3,7 +3,7 @@ import { View } from "./view.js";
 
 export class NegociacoesView extends View<Negociacoes> {
 
-	template(negociacao: Negociacoes) {
+	protected template(negociacao: Negociacoes) {
 		return `
 		<table class="table table-houver table-bordered">
 		    <thead>
@@ -19,7 +19,7 @@ export class NegociacoesView extends View<Negociacoes> {
 		`;
 	}
 
-	negociacaoAdicionada(negociacoes: Negociacoes): string {
+	private negociacaoAdicionada(negociacoes: Negociacoes): string {
 		return negociacoes
 			.lista()
 			.map(({data, quantidade, valor}) => {
